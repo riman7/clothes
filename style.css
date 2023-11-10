@@ -1,0 +1,376 @@
+@font-face {
+    font-family: exo;
+    src: url(/font/Exo-DemiBold.otf);
+}
+@font-face {
+    font-family: Lilita;
+    src: url(/font/LilitaOne-Regular.ttf);
+}
+:root{
+    --top-colour-2: rgb(237, 218, 247);
+    --top-colour: #aa00ff;
+    --blue-shadow: #9d00ff74;
+    --top-bar-font: rgba(0, 0, 0, 0.616);
+    --border: hsl(280, 100%, 50%);
+}
+*{
+    box-sizing: border-box;
+    margin: 0;  padding: 0;
+}
+
+.alert{
+    position: fixed;
+    display: none;
+    top: 50%;           left: 50%;
+    transform: translate(-50%, -70%);
+    width: 300px;       
+    border-radius: 5px;
+    background-color: rgb(242, 162, 13);
+    z-index: 100;
+    font-family: exo;
+    border: solid rgb(132, 0, 255) 3px;
+}
+.alert p{
+    padding: 7% 3% 4% 3%;
+    text-align: center;
+}
+.ok{
+    width: 100%;
+    display: flex;
+    justify-content: center;        align-items: center;
+}
+.ok-button{
+    margin: 3px 0 7% 0 ;
+    padding: 4px 4px;
+    cursor: pointer;
+    font-family: Lilita;
+    border: solid hsl(55, 100%, 45%) 2px;
+    background-image: linear-gradient(hsl(280, 100%, 50%), hsl(245, 100%, 50%), hsl(230, 100%, 50%));
+    border-radius: 7px;
+    box-shadow: rgba(255, 187, 187, 0.895) 0 0 9px 2px;
+    text-align: center;
+    font-size: 18px;
+    color: hsl(43, 100%, 59%);
+    overflow: hidden;
+}
+.ok-button:hover{
+    box-shadow: rgba(255, 227, 227, 0.895) 0 0 9px 2px;
+    border: solid hsl(55, 100%, 50%) 2px;
+    color: hsl(43, 100%, 65%);
+    text-shadow: white 0 0 20px;
+    transition: ease-in .2s;
+}
+.screen{
+    background-color: hsla(283, 45%, 8%, 0.9);
+    width: 100vw;   height: 100vh;
+    max-width: 600px;
+    position: fixed;
+    right: 50%;
+    transform: translate(50%, 0%);
+    overflow: hidden;
+    border: solid var(--border) 1px;
+    border-radius: 2px;
+}
+.screen.light{
+    background-color:hsl(208, 100%, 95%);
+}
+.top-bar{
+    position: fixed;
+    top: 0px;
+    width: 100vw;   height: 5.5vh;
+    background-color: var(--top-colour-2);
+    max-width: 600px;
+    box-shadow: var(--blue-shadow) 0 2px 17px 2px;
+    border-top: solid var(--border) 3px;
+    border-left: solid var(--border) 3px;
+    border-radius: 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-right: 15%;
+    z-index: 1;
+}
+.screen.light .top-bar{
+    background-color: hsl(280, 80%, 44%, 0.9);
+}
+.top-bar h1{
+    height: 100%;
+    font-family: exo;
+    color: var(--top-bar-font);
+    text-shadow: #00000096 0 0 3px;
+    display: flex;
+    text-align: center;         align-items: center;
+    z-index: -1;
+}
+.screen.light .top-bar h1{
+    color: whitesmoke;
+    text-shadow: rgba(255, 255, 255) 0 0 3px;
+}
+.mid{
+    height: 94.5vh; width: 100%;
+    display: block;
+    position: absolute;
+    top: 5.5vh;
+    z-index: -2;
+}
+.other{
+    height: 94.5vh;     width: 100%;
+    position: absolute;
+    top: 5.5vh;
+    z-index: -1;
+    display: none;
+    
+}
+.other-display{
+    width: 100%;
+    height: 40%;
+    display: flex;
+    justify-content: space-around;
+    align-items:center;
+    flex-flow: row wrap;
+    border: solid var(--border) 3px;
+    border-bottom-left-radius: 2px;
+    border-bottom: var(--top-colour) solid 2px;
+
+
+}
+.other-display-box{
+    width: 28%;
+    height: 40%;
+    background-color: white;
+    border: 2px solid var(--border);
+    box-shadow: rgba(255, 255, 255, 0.408) 0 0 100px 1px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px
+}
+.other-lists{
+    width: 100%;
+    height: 60%;
+    background-image: linear-gradient(0deg, rgba(47, 0, 255, 0.881),rgba(166, 0, 255, 0.5));
+}
+.circle{
+    background-color: var(--top-colour-2);
+    position: absolute;
+    box-shadow: rgb(128, 0, 255) 0 2px 17px 2px;
+    right: -9.5vh;        top: -12vh;
+    width: 22vh;        height: 22vh;
+    border-radius: 50%;
+    z-index: -1;
+}
+.menu{
+    position: fixed;
+    top: 0;    right:0;
+    width: 24%;
+    min-width: 150px;
+    background-color: var(--top-colour-2);
+    font-family: exo;
+    color: #371300;
+    border-bottom: solid var(--border) 3px;
+    border-left: solid var(--border) 3px;
+    box-shadow: var(--blue-shadow) 7px 0 8px 7px; 
+    display: none;          flex-direction: column;
+    border-bottom-left-radius: 5px;
+    z-index: 1;
+    gap: 17px;
+    padding: 13% 10px 20px 0;
+}
+
+.menu a{
+    background-color: transparent;
+    text-align: end;
+    font-size: 17px;
+    cursor: pointer;
+}
+.menu a:hover{
+    color: black;
+    text-shadow: rgb(202, 230, 255) 0 0 6px;
+    transition: ease-out .2s;
+}
+.profile{
+    width: 29%; height: 29%;
+    border: 2px blueviolet solid;
+    border-radius: 50%;
+    position: relative;
+    top: 73%;   left: 37%;
+    transform: translate(-50%,-50%);
+    cursor: pointer;
+    overflow: hidden;
+    z-index: 4;
+}
+.profile:hover{
+    box-shadow: blueviolet 0 0 2px 1px;
+    transition: ease-in .1s;
+}
+.profile img{
+    max-width: 100%;
+}
+
+.display{
+    width: 100%;    height:40%;
+    border: solid var(--border) 3px;
+    border-bottom-left-radius: 5px;
+    border-bottom: var(--top-colour) solid 2px;
+    display: flex;
+    align-items: center;        justify-content: center;
+    overflow: hidden;
+}
+.nothing{
+    width: 25%;     height: 100%;
+    display: flex;      flex-direction: column;
+}
+.nothing h2{
+    font-size: 15px;
+    color: aliceblue;
+    height: 15%;
+    text-align: center;
+    text-shadow: rgb(0, 0, 0) 0px 4px 4px;
+}
+.screen.light .nothing h2{
+    color: black;
+    text-shadow: rgba(0, 0, 0, 0.418) 0px 3px 6px;
+}
+.mr7{
+    width: 14%;
+    position: fixed;
+    top: 28%;
+}
+.options{
+    height: 85%;
+    display: flex;      flex-direction: column;
+    align-items: center;        justify-content: center;
+    gap: 9px;
+}
+.options button{
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    box-shadow: blueviolet 0 0 17px 1px;
+    padding: 4px;
+    border: 2px var(--border) solid;     border-radius: 4px;
+    font-size: 14px;        font-weight: 500;
+    cursor: pointer;
+    font-family: exo;
+}
+.options button:hover{
+    background-color: black;
+    color: white;
+    transition: ease-out .3s;
+}
+.screen.light .options button{
+    background-color: rgb(170, 0, 255);
+    border: 1px rgba(0, 0, 0, 0.79) solid;
+    box-shadow: rgba(186, 111, 255, 0.778) 0 0 17px 1px;
+    color: white;
+    transition: ease-out .3s;
+}
+.screen.light .options button:hover{
+    background-color: rgba(0, 0, 0, 0);
+    box-shadow: rgba(250, 245, 255, 0.778) 0 0 17px 1px;
+    border: 1px rgba(94, 36, 115, 0.79) solid;
+    color: black;
+}
+.clothes-display{
+    width: 75%;                 height: 100%;
+    padding-left: 10%;
+    display: flex;              flex-direction: column;
+    align-items: center;        justify-content: center;
+    gap: 3px;
+}
+.display-box{
+    border: 2px solid var(--border);
+    box-shadow: rgba(255, 255, 255, 0.408) 0 0 100px 1px;
+    background-color: white;
+    border-radius: 2px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;     justify-content: center;
+}
+
+.top-display{
+    height: 32%;
+    display: flex;
+    justify-content: center;    align-items: center;
+    gap: 5px;
+}
+.top-display-child{
+    width: 100px;    height: 100%;
+}
+.buttom-display{
+    width: 100px;    height: 32%;
+}
+.shoes-display{
+    width: 85px;    height: 20%;
+}
+.display-item{
+    width: fit-content;
+    max-width: 100%;
+    max-height: 100%;
+}
+.main-list{
+    width: 100%;    height:33.3%;
+    display: flex; 
+    border-bottom: blue 1px solid;
+}
+
+.list{
+    width: 100%;    height:60%;
+    background-image: linear-gradient(0deg, hsla(230, 100%, 50%, 0.8),hsla(280, 100%, 50%, 0.5),hsla(280, 100%, 50%, 0.35));
+}
+  
+.other-list{
+    height: 33.3%;
+}
+.items{
+    width: 92%;
+    overflow-x: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    padding: 0 5px 0 5px;
+}
+.items::-webkit-scrollbar{
+    display: none;
+}
+.items .item{
+    height: 90%;
+    border-radius: 4px;
+}
+.top-clothes{
+    box-shadow: var(--blue-shadow) 0 -4px 15px 2px;
+}
+.item:hover{
+    filter: blur(.1px) brightness(105%);
+    cursor: pointer;
+}
+.main-list.top-clothes .side-bar, .other-list-1 .side-bar{
+    background-image: -webkit-linear-gradient( 270deg, hsla(280, 100%, 50%, 0.7), hsl(280, 100%, 50%, .9), hsl(275, 100%, 50%, .9), hsl(270, 100%, 50%, .9));
+}
+.main-list.buttom-clothes .side-bar, .other-list-2 .side-bar{
+    background-image: -webkit-linear-gradient( 270deg, hsl(270, 100%, 50%, .9), hsl(260, 100%, 50%, .9), hsl(250, 100%, 50%, .89));
+}
+.main-list.shoes .side-bar, .other-list-3 .side-bar{
+    background-image: -webkit-linear-gradient( 270deg, hsl(250, 100%, 50%, .9), hsl(240, 100%, 50%, .9), hsl(230, 100%, 50%, .9), hsla(230, 100%, 50%, 0.9));
+}
+.side-bar{
+    width: 8%;        height: 100%;
+    position: relative;     right: 0%;
+    overflow: hidden;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.side-bar .fa-plus{
+    color: hsl(43, 100%, 50%);
+    cursor: pointer;
+    font-size: 35px;
+}
+.side-bar .fa-plus:hover{
+    color: hsl(43, 100%, 60%);
+    text-shadow: hsl(43, 100%, 50%) 0 0 1px,hsl(43, 100%, 70%) 0 0 2px, hsl(43, 100%, 80%) 0 0 3px, hsl(0, 0%, 100%) 0 0 100px, hsl(0, 0%, 100%) 0 0 200px, hsl(0, 0%, 100%) 0 0 200px;
+    transition: ease-in .2s;
+}
