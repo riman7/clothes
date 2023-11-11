@@ -62,7 +62,7 @@
 }
 .screen{
     background-color: hsla(283, 45%, 8%, 0.9);
-    width: 100vw;   height: 100vh;
+    width: 100vw;   height: 100svh;
     max-width: 600px;
     position: fixed;
     right: 50%;
@@ -174,7 +174,7 @@
     border-bottom-left-radius: 5px;
     z-index: 1;
     gap: 17px;
-    padding: 13% 10px 20px 0;
+    padding: 65px 10px 20px 0;
 }
 
 .menu a{
