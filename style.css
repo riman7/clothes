@@ -62,7 +62,7 @@
 }
 .screen{
     background-color: hsla(283, 45%, 8%, 0.9);
-    width: 100vw;   height: 100svh;
+    width: 100vw;   height: 100dvh;
     max-width: 600px;
     position: fixed;
     right: 50%;
