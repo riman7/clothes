@@ -43,14 +43,49 @@ lightMode.addEventListener('click', f=>{
     if(lightMode.textContent == 'Light Mode •'){
         screen.classList.add('light');
         lightMode.textContent = 'Dark Mode •';
-        menu.style.display = 'none'
+        menu.style.display = 'none';
     }
     else{
         screen.classList.remove('light');
         lightMode.textContent = 'Light Mode •';
-        menu.style.display = 'none'
+        menu.style.display = 'none';
     }
 })
+
+var topDisplay = document.querySelector('.top-display');
+var onePiece = document.querySelector('.one-piece');
+var buttomDisplay = document.querySelector('.buttom-display');
+var onePieceDisplay = document.querySelector('.one-piece-display');
+var topDisplayChild = document.querySelector('.top-display-child');
+var topClothes = document.querySelector('.top-clothes');
+var buttomClothes = document.querySelector('.buttom-clothes');
+var onePieceClothes = document.querySelector('.one-piece-clothes');
+onePiece.addEventListener('click', f=>{
+    if(onePiece.textContent == 'One Piece Mode •'){
+        topDisplay.style.height = '66%';
+        menu.style.display = 'none';
+        onePiece.textContent = 'Normal Mode •';
+        topDisplayChild.style.display = 'none';
+        buttomDisplay.style.display = 'none';
+        onePieceDisplay.style.display = 'flex';
+        topClothes.style.display = 'none';
+        buttomClothes.style.display = 'none';
+        onePieceClothes.style.display = 'flex';
+    }
+    else{
+        topDisplay.style.height = '33%';
+        menu.style.display = 'none';
+        onePiece.textContent ='One Piece Mode •';
+        topDisplayChild.style.display = 'flex';
+        buttomDisplay.style.display = 'flex';
+        onePieceDisplay.style.display = 'none';
+        topClothes.style.display = 'flex';
+        buttomClothes.style.display = 'flex';
+        onePieceClothes.style.display = 'none';
+    }
+})
+
+
 // For DISPLAY
 // Top
 
@@ -60,6 +95,16 @@ var topDisplayItem = document.querySelector('.top-display-item');
 for(let i=0; i<clickedItemTop.length; i++ ){
     clickedItemTop[i].addEventListener("click", f=>{
         topDisplayItem.src = clickedItemTop[i].src;
+    })
+}
+
+//one piece
+var clickedItemOnePiece = document.querySelectorAll('.one-piece-item');
+var onePieceDisplayItem = document.querySelector('.one-piece-display-item');
+
+for(let i=0; i<clickedItemOnePiece.length; i++ ){
+    clickedItemOnePiece[i].addEventListener("click", f=>{
+        onePieceDisplayItem.src = clickedItemOnePiece[i].src;
     })
 }
 
