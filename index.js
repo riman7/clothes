@@ -39,16 +39,19 @@ otherBotton.addEventListener('click', f =>{
 
 var lightMode = document.querySelector('.light-mode');
 var screen = document.querySelector('.screen');
+var mr7 = document.querySelector('.mr7');
 lightMode.addEventListener('click', f=>{
     if(lightMode.textContent == 'Light Mode •'){
         screen.classList.add('light');
         lightMode.textContent = 'Dark Mode •';
         menu.style.display = 'none';
+        mr7.src = './Mr7 logo black.png';
     }
     else{
         screen.classList.remove('light');
         lightMode.textContent = 'Light Mode •';
         menu.style.display = 'none';
+        mr7.src = './Mr7 logo.png';
     }
 })
 
