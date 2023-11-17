@@ -224,7 +224,7 @@
     display: flex;      flex-direction: column;
 }
 .nothing h2{
-    font-size: 1.5rem;
+    font-size: 1.5em;
     color: aliceblue;
     height: 15%;
     text-align: center;
@@ -387,4 +387,16 @@
     color: hsl(43, 100%, 60%);
     text-shadow: hsl(43, 100%, 50%) 0 0 1px,hsl(43, 100%, 70%) 0 0 2px, hsl(43, 100%, 80%) 0 0 3px, hsl(0, 0%, 100%) 0 0 100px, hsl(0, 0%, 100%) 0 0 200px, hsl(0, 0%, 100%) 0 0 200px;
     transition: ease-in .2s;
+}
+
+@media (max-width: 40rem ) {
+    .top-bar h1{
+        font-size: 2.5em;
+    }
+    .options button{
+        font-size: 1em;
+    }
+    .nothing h2{
+        font-size: 1em;
+    }
 }
