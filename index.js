@@ -162,7 +162,7 @@ addOuter.addEventListener('click', g =>{
     if(addOuter.textContent=='Add Outer'){
         addOuter.textContent = 'Remove Outer';
         topDisplay.insertAdjacentHTML('beforeend',
-        ' <div class="top-display-child top-display-child-2 display-box"><img src="/top clothes/rBVaVV3CvDGACquPAAVEmB-ZoIg962.jpg" alt="jdj" class="display-item top-display-item top-display-item-2"></div> ');
+        ' <div class="top-display-child top-display-child-2 display-box"><img src="./top clothes/rBVaVV3CvDGACquPAAVEmB-ZoIg962.jpg" alt="jdj" class="display-item top-display-item top-display-item-2"></div> ');
         var topDisplayItem2 = document.querySelector('.top-display-item-2');
         for(let i=0; i<clickedItemTop.length; i++ ){
             if(clickedItemTop[i].className.includes('top-item-2') == true){
